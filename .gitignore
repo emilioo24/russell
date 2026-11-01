@@ -1,0 +1,8 @@
+node_modules/
+dist/
+
+# Material original pesado (fotos de 2 MB y logos fuente).
+# El sitio usa las versiones optimizadas de img/.
+/*.jpg
+/*.png
+/*.zip

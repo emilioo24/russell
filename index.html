@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Russell Beer Pub · Paraná</title>
+  <meta name="description" content="Russell Beer Pub — cerveza tirada, DJs y Papas Bertrand en Salta 391, Paraná. Martes cerrado. No insista.">
+  <meta name="theme-color" content="#0E0E0E">
+  <meta property="og:title" content="Russell Beer Pub · Paraná">
+  <meta property="og:description" content="Pintas, música y filosofía barata. Salta 391, Paraná.">
+  <link rel="icon" href="img/russell-sello-lineas-dorado.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=Rye&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ============ LOADER ============ -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <img src="img/russell-sello-lineas-dorado.png" alt="" class="loader__seal">
+    <div class="loader__bar"><span></span></div>
+    <p class="loader__txt">Tirando la primera…</p>
+  </div>
+
+  <!-- barra de progreso: una pinta que se llena mientras scrolleás -->
+  <div class="pint-progress" aria-hidden="true"><span id="pintBar"></span></div>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <a href="#top" class="nav__logo" aria-label="Russell Beer Pub, inicio">
+      <img src="img/russell-logo-horizontal-para-fondo-oscuro.png" alt="Russell Beer Pub">
+    </a>
+    <nav class="nav__links" id="navLinks" aria-label="Principal">
+      <a href="#agenda">Esta semana</a>
+      <a href="#carta">La carta</a>
+      <a href="#promos">Promos</a>
+      <a href="#galeria">Ambiente</a>
+      <a href="#donde">Dónde</a>
+      <a href="#faq">FAQ</a>
+      <a href="https://menu.fu.do/russell" class="btn btn--gold btn--sm" target="_blank" rel="noopener">Pedí para retirar</a>
+    </nav>
+    <button class="nav__burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main id="top">
+
+    <!-- ============ 1. HERO ============ -->
+    <section class="hero">
+      <div class="hero__bg" id="heroBg"><img src="img/salon-neon.jpg" alt="El salón de Russell con el neón rojo encendido y la pista llena"></div>
+      <div class="hero__shade"></div>
+      <div class="hero__bokeh" id="bokeh" aria-hidden="true"></div>
+
+      <div class="hero__inner">
+        <p class="status" id="status"><i class="status__dot"></i><span id="statusText">Abrimos hoy 18:30</span></p>
+        <h1 class="hero__title">
+          <span class="line"><span>Pintas,</span></span>
+          <span class="line"><span>música</span></span>
+          <span class="line"><span>y filosofía <em>barata.</em></span></span>
+        </h1>
+        <p class="hero__sub">Cerveza tirada, DJs y Papas Bertrand en una esquina verde de Paraná. Desde MMXVI.</p>
+        <div class="hero__ctas">
+          <a href="https://www.russellbeerpub.com.ar/menu" class="btn btn--gold" target="_blank" rel="noopener">Ver la carta</a>
+          <a href="https://menu.fu.do/russell" class="btn btn--ghost" target="_blank" rel="noopener">Pedí para retirar</a>
+        </div>
+        <p class="hero__countdown" id="countdown" hidden></p>
+      </div>
+
+      <a href="#manifiesto" class="hero__scroll" aria-label="Bajar">
+        <span>Bajá</span>
+        <i></i>
+      </a>
+    </section>
+
+    <!-- ticker -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker__track">
+        <span>Cerveza tirada</span><b>✦</b><span>DJs</span><b>✦</b><span>Papas Bertrand</span><b>✦</b><span>Russell Sin Banquetas</span><b>✦</b><span>Salta 391</span><b>✦</b><span>Martes cerrado. No insista.</span><b>✦</b>
+        <span>Cerveza tirada</span><b>✦</b><span>DJs</span><b>✦</b><span>Papas Bertrand</span><b>✦</b><span>Russell Sin Banquetas</span><b>✦</b><span>Salta 391</span><b>✦</b><span>Martes cerrado. No insista.</span><b>✦</b>
+      </div>
+    </div>
+
+    <!-- ============ MANIFIESTO / BERTRAND ============ -->
+    <section class="manifesto section section--alt" id="manifiesto">
+      <div class="container manifesto__grid">
+        <figure class="manifesto__img reveal" data-reveal="left">
+          <img src="img/bertrand.jpg" alt="Recorte de Bertrand Russell con su pipa, iluminado con lucecitas, junto a la pizarra de canillas" loading="lazy">
+          <figcaption>El patrón. No atiende, pero supervisa.</figcaption>
+        </figure>
+        <div class="manifesto__txt">
+          <p class="eyebrow reveal">Sobre el nombre</p>
+          <h2 class="h2 reveal">Bertrand Russell <br>dudaba de todo.</h2>
+          <blockquote class="quote reveal">
+            “El problema del mundo es que los estúpidos están seguros de todo y los inteligentes están llenos de dudas.”
+            <cite>— B. Russell, filósofo, y probablemente cliente honorario</cite>
+          </blockquote>
+          <p class="reveal">Nosotros también dudamos. ¿IPA o Stout? ¿Una más o nos vamos? ¿Papas solas o Papas Bertrand? La lógica dice que pidas las dos. La lógica nunca se equivoca.</p>
+
+          <div class="stats">
+            <div class="stat reveal"><strong data-count="2016">0</strong><span>Abrimos la canilla</span></div>
+            <div class="stat reveal"><strong data-count="26" data-suffix="K">0</strong><span>Gente en Instagram</span></div>
+            <div class="stat reveal"><strong data-count="6">0</strong><span>Noches por semana</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 2. AGENDA / RSB ============ -->
+    <section class="agenda section" id="agenda">
+      <div class="container">
+        <div class="agenda__head">
+          <p class="eyebrow eyebrow--red reveal">Esta semana</p>
+          <h2 class="h2 reveal">
+            <span class="neon" data-text="Russell">Russell</span>
+            <span class="rye">Sin Banquetas</span>
+          </h2>
+          <p class="lead reveal">Corremos las banquetas, el DJ sube el volumen y la barra se vuelve pista. Le decimos <strong>RSB</strong>. Vos decile como quieras, pero vení temprano.</p>
+        </div>
+
+        <div class="flyers">
+          <article class="flyer flyer--photo tilt reveal" data-dow="5">
+            <img src="img/djs.jpg" alt="Dos DJs pasando música frente al mural de Russell" loading="lazy">
+            <div class="flyer__body">
+              <span class="flyer__date"><b class="js-day">VIE</b><i class="js-date">--/--</i></span>
+              <h3>RSB · Viernes</h3>
+              <p>DJ set desde las 23:30. Line-up completo en las historias.</p>
+              <span class="flyer__tag">Se baila</span>
+            </div>
+          </article>
+
+          <article class="flyer flyer--poster flyer--red tilt reveal" data-dow="6">
+            <div class="poster">
+              <span class="poster__top">MMXVI · Paraná</span>
+              <span class="poster__big">RSB</span>
+              <span class="poster__mid">Noche larga</span>
+              <span class="poster__date"><b class="js-day">SÁB</b> <i class="js-date">--/--</i></span>
+              <span class="poster__foot">Hasta las 02:30 · Salta 391</span>
+            </div>
+            <div class="flyer__body">
+              <h3>RSB · Sábado</h3>
+              <p>La versión extendida. Cerramos 02:30 y ni un minuto antes.</p>
+              <span class="flyer__tag">Sin banquetas</span>
+            </div>
+          </article>
+
+          <article class="flyer flyer--poster flyer--gold tilt reveal" data-dow="4">
+            <div class="poster">
+              <span class="poster__top">Previa oficial</span>
+              <span class="poster__big">JUE</span>
+              <span class="poster__mid">Vinilos &amp; pintas</span>
+              <span class="poster__date"><b class="js-day">JUE</b> <i class="js-date">--/--</i></span>
+              <span class="poster__foot">Música tranqui · banquetas en su lugar</span>
+            </div>
+            <div class="flyer__body">
+              <h3>Jueves de barra</h3>
+              <p>Para charlar sin gritar. Al menos hasta la tercera.</p>
+              <span class="flyer__tag">Banquetas sí</span>
+            </div>
+          </article>
+        </div>
+
+        <p class="agenda__note reveal">Los flyers salen primero en <a href="https://www.instagram.com/russellbeerpub/" target="_blank" rel="noopener">@russellbeerpub</a>. Activá las notificaciones o enterate tarde, vos sabrás.</p>
+      </div>
+    </section>
+
+    <!-- ============ 3. LA CARTA ============ -->
+    <section class="carta section section--alt" id="carta">
+      <div class="bubbles" aria-hidden="true" id="bubbles"></div>
+      <div class="container">
+        <p class="eyebrow reveal">La carta</p>
+        <h2 class="h2 reveal">Lo que sale <br>de las canillas</h2>
+        <p class="lead reveal">Tocá una canilla y servite. Virtualmente, claro: la de verdad te espera en la barra.</p>
+
+        <div class="taproom reveal">
+          <div class="pour">
+            <svg class="glass" viewBox="0 0 200 300" aria-hidden="true">
+              <defs>
+                <clipPath id="glassClip">
+                  <path d="M30 20 L170 20 L152 280 Q150 290 140 290 L60 290 Q50 290 48 280 Z"/>
+                </clipPath>
+                <linearGradient id="beerShine" x1="0" x2="1">
+                  <stop offset="0" stop-color="#fff" stop-opacity=".0"/>
+                  <stop offset=".3" stop-color="#fff" stop-opacity=".18"/>
+                  <stop offset=".45" stop-color="#fff" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <g clip-path="url(#glassClip)">
+                <rect class="glass__beer" id="beer" x="0" y="0" width="200" height="300"/>
+                <rect class="glass__foam" id="foam" x="0" y="0" width="200" height="34" rx="6"/>
+                <g id="glassBubbles"></g>
+                <rect x="0" y="0" width="200" height="300" fill="url(#beerShine)"/>
+              </g>
+              <path class="glass__outline" d="M30 20 L170 20 L152 280 Q150 290 140 290 L60 290 Q50 290 48 280 Z"/>
+            </svg>
+            <div class="pour__info" aria-live="polite">
+              <span class="pour__num" id="beerNum">#1</span>
+              <h3 class="pour__name" id="beerName">Elegí una canilla</h3>
+              <p class="pour__style" id="beerStyle">—</p>
+              <div class="pour__meter">
+                <div><span>ABV</span><b id="beerAbv">–</b></div>
+                <div><span>IBU</span><b id="beerIbu">–</b></div>
+              </div>
+              <p class="pour__desc" id="beerDesc">Las canillas rotan seguido. Lo que hay hoy está escrito con tiza en la pizarra.</p>
+            </div>
+          </div>
+          <div class="board" role="listbox" aria-label="Canillas" id="board">
+            <!-- se completa con JS -->
+          </div>
+
+        </div>
+
+        <!-- comida -->
+        <div class="food">
+          <article class="food__star reveal">
+            <div class="food__badge">La de la casa</div>
+            <h3 class="food__title">Papas <span class="rye">Bertrand</span></h3>
+            <p>Si el filósofo hubiera probado estas papas, escribía un cuarto tomo de los <em>Principia</em>. Crocantes por fuera, conversación asegurada por dentro, y bien cargadas para compartir (o no, no te juzgamos).</p>
+            <ul class="food__list">
+              <li>Para el centro de la mesa</li>
+              <li>Ideales con una IPA bien fría</li>
+              <li>Adictivas. Avisamos.</li>
+            </ul>
+          </article>
+          <figure class="food__img reveal" data-reveal="right">
+            <img src="img/pizza.jpg" alt="Pizza recién servida en una mesa con dos pintas" loading="lazy">
+          </figure>
+        </div>
+
+        <div class="carta__cta reveal">
+          <a href="https://www.russellbeerpub.com.ar/menu" class="btn btn--gold btn--lg" target="_blank" rel="noopener">Ver la carta completa</a>
+          <a href="https://menu.fu.do/russell" class="btn btn--ghost btn--lg" target="_blank" rel="noopener">Pedir para retirar</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 4. PROMOS ============ -->
+    <section class="promos section" id="promos">
+      <div class="container">
+        <p class="eyebrow reveal">Promociones</p>
+        <h2 class="h2 reveal">Matemática <br>aplicada</h2>
+        <p class="lead reveal">Russell escribió los <em>Principia Mathematica</em>. Nosotros aplicamos la parte que importa: que te rinda más.</p>
+
+        <div class="promo-grid">
+          <div class="promo reveal" tabindex="0">
+            <div class="promo__inner">
+              <div class="promo__front">
+                <span class="promo__k">Happy Hour</span>
+                <strong class="promo__big">2×1</strong>
+                <span class="promo__s">De 18:30 a 20:30</span>
+                <span class="promo__hint">Tocá para ver la letra chica</span>
+              </div>
+              <div class="promo__back">
+                <p>Pintas seleccionadas, todos los días que abrimos. Llegar temprano también es una filosofía.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="promo reveal" tabindex="0">
+            <div class="promo__inner">
+              <div class="promo__front">
+                <span class="promo__k">Pedí y retirá</span>
+                <strong class="promo__big">0'</strong>
+                <span class="promo__s">de espera en la barra</span>
+                <span class="promo__hint">Tocá para ver la letra chica</span>
+              </div>
+              <div class="promo__back">
+                <p>Pedís online, pasás a buscar. Solo para retirar: el delivery es un concepto que todavía estamos debatiendo.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="promo reveal" tabindex="0">
+            <div class="promo__inner">
+              <div class="promo__front">
+                <span class="promo__k">Cumpleaños</span>
+                <strong class="promo__big">+1</strong>
+                <span class="promo__s">año, misma mesa</span>
+                <span class="promo__hint">Tocá para ver la letra chica</span>
+              </div>
+              <div class="promo__back">
+                <p>Festejalo en Russell. Escribinos por WhatsApp con tiempo y armamos algo. La torta la traés vos.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="promo promo--tue reveal" tabindex="0">
+            <div class="promo__inner">
+              <div class="promo__front">
+                <span class="promo__k">Martes</span>
+                <strong class="promo__big">100%</strong>
+                <span class="promo__s">de descuento en todo</span>
+                <span class="promo__hint">Tocá para ver la letra chica</span>
+              </div>
+              <div class="promo__back">
+                <p>Porque está cerrado.</p>
+                <p class="rye promo__stamp">No insista.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 5. GALERÍA ============ -->
+    <section class="galeria section section--alt" id="galeria">
+      <div class="container">
+        <div class="galeria__head">
+          <div>
+            <p class="eyebrow reveal">El ambiente</p>
+            <h2 class="h2 reveal">Así se ve <br>un jueves cualquiera</h2>
+          </div>
+          <a href="https://www.instagram.com/russellbeerpub/" class="btn btn--ghost reveal" target="_blank" rel="noopener">@russellbeerpub</a>
+        </div>
+        <div class="masonry" id="gallery">
+          <button class="shot reveal"><img src="img/salon-neon.jpg" alt="Pista llena bajo el neón rojo" loading="lazy"></button>
+          <button class="shot reveal"><img src="img/barra.jpg" alt="Bartender entregando tres pintas en la barra" loading="lazy"></button>
+          <button class="shot reveal"><img src="img/vereda.jpg" alt="Mesas en la vereda bajo guirnaldas de luces" loading="lazy"></button>
+          <button class="shot reveal"><img src="img/djs.jpg" alt="DJs en la cabina" loading="lazy"></button>
+          <button class="shot reveal"><img src="img/mesas.jpg" alt="Amigos brindando en el salón de ladrillo" loading="lazy"></button>
+          <button class="shot reveal"><img src="img/fachada.jpg" alt="La fachada verde de Russell de noche" loading="lazy"></button>
+          <button class="shot reveal"><img src="img/pizza.jpg" alt="Pizza y pintas en la mesa" loading="lazy"></button>
+          <button class="shot reveal"><img src="img/bertrand.jpg" alt="Bertrand Russell con lucecitas" loading="lazy"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 6. HORARIOS Y UBICACIÓN ============ -->
+    <section class="donde section" id="donde">
+      <div class="container donde__grid">
+        <div>
+          <p class="eyebrow reveal">Horarios</p>
+          <h2 class="h2 reveal">Cuándo <br>y dónde</h2>
+          <p class="clock reveal">En Paraná son las <b id="clock">--:--</b></p>
+
+          <ul class="hours reveal" id="hours">
+            <li data-d="1"><span>Lunes</span><b>18:30 – 01:30</b></li>
+            <li data-d="2" class="hours__tue" tabindex="0" role="button" aria-label="Martes: cerrado"><span>Martes</span><b>Cerrado. <span class="rye">No insista.</span></b></li>
+            <li data-d="3"><span>Miércoles</span><b>18:30 – 01:30</b></li>
+            <li data-d="4"><span>Jueves</span><b>18:30 – 01:30</b></li>
+            <li data-d="5"><span>Viernes</span><b>18:30 – 02:30</b></li>
+            <li data-d="6"><span>Sábado</span><b>18:30 – 02:30</b></li>
+            <li data-d="0"><span>Domingo</span><b>18:30 – 01:30</b></li>
+          </ul>
+          <p class="insist" id="insist" aria-live="polite"></p>
+
+          <address class="addr reveal">
+            <strong>Salta 391</strong>
+            Paraná, Entre Ríos
+            <a href="https://g.page/Russellbeerpub" target="_blank" rel="noopener" class="link-arrow">Cómo llegar →</a>
+          </address>
+        </div>
+
+        <div class="donde__media reveal" data-reveal="right">
+          <figure class="donde__photo">
+            <img src="img/fachada.jpg" alt="La esquina verde de Russell, con gente en la vereda" loading="lazy">
+            <figcaption>Buscá la esquina verde. Si ves gente feliz en la vereda, llegaste.</figcaption>
+          </figure>
+          <div class="map">
+            <iframe title="Mapa: Russell Beer Pub, Salta 391, Paraná" src="https://www.google.com/maps?q=Russell+Beer+Pub,+Salta+391,+Paran%C3%A1,+Entre+R%C3%ADos&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 7. FAQ ============ -->
+    <section class="faq section section--alt" id="faq">
+      <div class="container container--narrow">
+        <p class="eyebrow reveal">Preguntas frecuentes</p>
+        <h2 class="h2 reveal">Dudas razonables</h2>
+
+        <div class="faq__list">
+          <details class="reveal">
+            <summary>¿Abren los martes?</summary>
+            <p>No. Ya sabemos que es un día largo y que una pinta vendría bien. Pero no. No insista.</p>
+          </details>
+          <details class="reveal">
+            <summary>¿Hacen delivery?</summary>
+            <p>Solo para retirar. Pedís online en <a href="https://menu.fu.do/russell" target="_blank" rel="noopener">nuestro sistema de pedidos</a>, te avisamos cuando está, y pasás por Salta 391.</p>
+          </details>
+          <details class="reveal">
+            <summary>¿Se puede reservar mesa?</summary>
+            <p>Escribinos por <a href="https://wa.me/5493435323133" target="_blank" rel="noopener">WhatsApp</a> y vemos. En noches de RSB la cosa se llena rápido, así que cuanto antes, mejor.</p>
+          </details>
+          <details class="reveal">
+            <summary>¿Qué es RSB?</summary>
+            <p>Russell Sin Banquetas. Las noches en que sacamos las banquetas, viene un DJ y el pub se convierte en pista. Las fechas salen en Instagram.</p>
+          </details>
+          <details class="reveal">
+            <summary>¿Qué cervezas tienen?</summary>
+            <p>Depende del día. Las canillas rotan y lo que hay está en la pizarra de la barra y en <a href="https://www.russellbeerpub.com.ar/menu" target="_blank" rel="noopener">la carta online</a>. Si no te decidís, pedí que te den a probar.</p>
+          </details>
+          <details class="reveal">
+            <summary>¿Por qué se llama Russell?</summary>
+            <p>Por Bertrand Russell, filósofo, matemático y Nobel de Literatura. Pensaba que había que dudar de todo. Nosotros dudamos de todo menos de la cerveza.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ 8. FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <img src="img/russell-sello-lineas-dorado.png" alt="Sello de Russell Beer Pub" class="footer__seal" loading="lazy">
+        <p class="footer__tag">Pintas, música y <br>filosofía barata.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Escribinos</h4>
+        <a href="https://www.instagram.com/russellbeerpub/" target="_blank" rel="noopener">Instagram · @russellbeerpub</a>
+        <a href="https://wa.me/5493435323133" target="_blank" rel="noopener">WhatsApp · 343 532-3133</a>
+        <a href="mailto:russellbeerpub@gmail.com">russellbeerpub@gmail.com</a>
+      </div>
+      <div class="footer__col">
+        <h4>Vení</h4>
+        <a href="https://g.page/Russellbeerpub" target="_blank" rel="noopener">Salta 391, Paraná, ER</a>
+        <span>Lun, Mié, Jue y Dom · 18:30–01:30</span>
+        <span>Vie y Sáb · 18:30–02:30</span>
+        <span>Martes · ya sabés</span>
+      </div>
+      <div class="footer__col">
+        <h4>Atajos</h4>
+        <a href="https://www.russellbeerpub.com.ar/menu" target="_blank" rel="noopener">La carta</a>
+        <a href="https://menu.fu.do/russell" target="_blank" rel="noopener">Pedí para retirar</a>
+        <a href="#agenda">Esta semana</a>
+      </div>
+    </div>
+    <div class="container footer__legal">
+      <p>Beber con moderación. Prohibida la venta de alcohol a menores de 18 años.</p>
+      <p>© <span id="year">2026</span> Russell Beer Pub · Paraná, Entre Ríos</p>
+    </div>
+  </footer>
+
+  <!-- WhatsApp flotante -->
+  <a href="https://wa.me/5493435323133" class="wa" target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16 3C9 3 3.3 8.6 3.3 15.6c0 2.2.6 4.4 1.7 6.3L3.2 29l7.3-1.9c1.8 1 3.9 1.5 5.9 1.5 7 0 12.7-5.7 12.7-12.6C29.1 8.6 23.3 3 16 3Zm0 23.3c-1.9 0-3.8-.5-5.4-1.5l-.4-.2-4.3 1.1 1.2-4.2-.3-.4a10.4 10.4 0 0 1-1.6-5.5C5.2 9.8 10 5.1 16 5.1c5.9 0 10.8 4.7 10.8 10.5S22 26.3 16 26.3Zm5.9-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.7 5 .8.4 1.4.6 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5.3-.8.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4Z"/></svg>
+  </a>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lightbox__close" aria-label="Cerrar">✕</button>
+    <img src="" alt="" id="lightboxImg">
+  </div>
+
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>
