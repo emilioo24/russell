@@ -14,13 +14,19 @@ pnpm preview   # sirve dist/ para revisar el build
 ## Estructura
 
 ```
-index.html        página única
-css/styles.css    estilos (paleta y tipografías en :root)
-js/main.js        animaciones, estado abierto/cerrado, canillas, etc.
+index.html        home
+carta.html        carta completa (categorías + buscador)
+pedir.html        pedido para retirar (carrito + checkout) — DEMO, no envía nada
+css/styles.css    estilos generales (paleta y tipografías en :root)
+css/shop.css      estilos de carta y pedidos
+js/main.js        animaciones de la home
+js/data.js        productos, cervezas y precios (de ejemplo)
+js/hours.js       horarios, estado abierto/cerrado y turnos de retiro
+js/carta.js, js/pedir.js, js/chrome.js
 img/              fotos optimizadas para web
 ```
 
-Las cervezas de la pizarra se editan en el array `BEERS` de `js/main.js`.
+Toda la carta (cervezas, comida y precios) sale de `js/data.js`: con cambiar ese archivo se actualizan la home, la carta y los pedidos.
 
 ## Publicar en GitHub Pages
 

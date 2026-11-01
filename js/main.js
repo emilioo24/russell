@@ -1,4 +1,7 @@
 /* Russell Beer Pub — demo · interacciones */
+import { arNow, getStatus, fmt } from "./hours.js";
+import { BEERS } from "./data.js";
+
 (() => {
   "use strict";
 
@@ -24,36 +27,7 @@
     Promise.race([Promise.all([minTime, loaded]), new Promise(r => setTimeout(r, 2600))]).then(finishLoad);
   }
 
-  /* ---------- HORA DE PARANÁ ---------- */
-  const TZ = "America/Argentina/Buenos_Aires";
-  const DOW = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 };
-  function arNow() {
-    const parts = new Intl.DateTimeFormat("en-US", {
-      timeZone: TZ, weekday: "short", hour: "2-digit", minute: "2-digit", second: "2-digit",
-      year: "numeric", month: "2-digit", day: "2-digit", hourCycle: "h23"
-    }).formatToParts(new Date()).reduce((a, p) => (a[p.type] = p.value, a), {});
-    return {
-      dow: DOW[parts.weekday],
-      h: +parts.hour, m: +parts.minute, s: +parts.second,
-      day: +parts.day, month: +parts.month, year: +parts.year
-    };
-  }
-
-  // horas en formato decimal; > 24 = después de medianoche
-  const HOURS = { 0: [18.5, 25.5], 1: [18.5, 25.5], 2: null, 3: [18.5, 25.5], 4: [18.5, 25.5], 5: [18.5, 26.5], 6: [18.5, 26.5] };
-  const fmt = t => { const h = Math.floor(t) % 24, m = Math.round((t % 1) * 60); return `${String(h).padStart(2, "0")}:${String(m).padStart(2, "0")}`; };
-
-  function getStatus() {
-    const n = arNow();
-    const t = n.h + n.m / 60 + n.s / 3600;
-    const prev = (n.dow + 6) % 7;
-    if (HOURS[prev] && t + 24 < HOURS[prev][1]) return { state: "open", until: HOURS[prev][1], serviceDay: prev, n };
-    const today = HOURS[n.dow];
-    if (today && t >= today[0]) return { state: "open", until: today[1], serviceDay: n.dow, n };
-    if (today) return { state: "later", opensIn: (today[0] - t) * 3600, serviceDay: n.dow, n };
-    return { state: "tuesday", serviceDay: n.dow, n };
-  }
-
+  /* ---------- HORA DE PARANÁ (ver hours.js) ---------- */
   const statusEl = $("#status"), statusText = $("#statusText"), countdown = $("#countdown"), clock = $("#clock");
   function renderStatus() {
     const st = getStatus();
@@ -177,20 +151,7 @@
   }
 
   /* ---------- PIZARRA DE CANILLAS + PINTA ---------- */
-  // Estilos de referencia para la demo: el cliente reemplaza por sus canillas reales.
-  const BEERS = [
-    { name: "Golden", style: "Golden Ale", abv: "5,0%", ibu: 18, color: "#E9B949", fill: 70, desc: "La puerta de entrada. Liviana, rubia, sin vueltas. Para arrancar la noche sin filosofar demasiado." },
-    { name: "Honey", style: "Honey Beer", abv: "6,5%", ibu: 15, color: "#DE9A2E", fill: 70, desc: "Miel entrerriana y un final dulce que te hace pedir otra antes de terminar esta." },
-    { name: "APA", style: "American Pale Ale", abv: "5,4%", ibu: 35, color: "#D48A2A", fill: 70, desc: "Lúpulo cítrico, amargor amable. La que pedís cuando no sabés qué pedir." },
-    { name: "IPA", style: "India Pale Ale", abv: "6,4%", ibu: 60, color: "#C97A20", fill: 70, desc: "Amarga, aromática y orgullosa de serlo. Va de la mano con las Papas Bertrand." },
-    { name: "Hazy", style: "New England IPA", abv: "6,8%", ibu: 30, color: "#EBB654", fill: 70, desc: "Turbia a propósito. Jugosa, frutal, peligrosamente tomable." },
-    { name: "Pilsen", style: "Bohemian Pilsner", abv: "4,8%", ibu: 28, color: "#F2CF55", fill: 70, desc: "Clásica, cristalina y bien fría. Para los que dudan de todo, menos de esto." },
-    { name: "Red", style: "Irish Red Ale", abv: "5,6%", ibu: 22, color: "#9E3B1F", fill: 70, desc: "Caramelo, tostado y color ladrillo, como las paredes de la casa." },
-    { name: "Scottish", style: "Scottish Ale", abv: "6,2%", ibu: 20, color: "#7A3517", fill: 70, desc: "Maltosa y redonda. Para la charla larga de la mesa del fondo." },
-    { name: "Stout", style: "Dry Stout", abv: "5,8%", ibu: 38, color: "#24140C", fill: 70, desc: "Negra como la noche de un sábado de RSB. Café, chocolate y espuma cremosa." },
-    { name: "Session", style: "Session IPA", abv: "4,3%", ibu: 40, color: "#E0A640", fill: 70, desc: "Todo el lúpulo, menos graduación. Pensada para la maratón." }
-  ];
-
+  // Las canillas salen de data.js (estilos de ejemplo para la demo)
   const board = $("#board"), glass = $(".glass"), beer = $("#beer"), foam = $("#foam"), pour = $(".pour");
   BEERS.forEach((b, i) => {
     const btn = document.createElement("button");
